@@ -81,16 +81,17 @@ $$ EuclideanDistance = \sqrt{\sum_{i = 1}^{n} (X_{test, i} - X_{train, i})^2} $$
 where _n_ is number of features
 
 * Find the indices of the {k} samples in \(X_{train}\) with the smallest distances:
+
 $$
-nearest\_neighbors\_indices = argsort(distances)[:k]
+nearest_neighbors_indices = argsort(distances)[:k]
 $$
 
 * Get the labels that go with the closest neighbors:
 
-$$ nearest\_labels = y_{train}[nearest\_neighbors\_indices] $$
+$$ nearest_labels = y_{train}[nearest_neighbors_indices] $$
 
 * item Based on the majority class among the closest neighbors, determine the label for the _X_test_.
-$$ predicted\_label = argmax(bincount(nearest\_labels)) $$
+$$ predicted_label = argmax(bincount(nearest_labels)) $$
 
 * Add the predicted label to the list of predictions.
 
