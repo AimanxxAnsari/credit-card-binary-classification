@@ -76,9 +76,7 @@ Explaining class KNNClassifier:
 2. Training: Takes _X_train_ and corresponding labels _y_train_ as input and storing them.
 3. Prediction: Takes test dataset as input. For each sample in the test dataset, we calculate the Euclidean distance.
 
-$
- EuclideanDistance = \sqrt{\sum_{i = 1}^{n} (X_{test, i} - X_{train, i})^2}
-$
+$ EuclideanDistance = \sqrt{\sum_{i = 1}^{n} (X_{test, i} - X_{train, i})^2} $
 
 where _n_ is number of features
 
@@ -89,14 +87,10 @@ $$
 
 * Get the labels that go with the closest neighbors:
 
-$$
-nearest\_labels = y_{train}[nearest\_neighbors\_indices]
-$$
+$$ nearest\_labels = y_{train}[nearest\_neighbors\_indices] $$
 
-* item Based on the majority class among the closest neighbors, determine the label for the \(X_{test}\).
-$$
-predicted\_label = argmax(bincount(nearest\_labels))
-$$
+* item Based on the majority class among the closest neighbors, determine the label for the _X_test_.
+$$ predicted\_label = argmax(bincount(nearest\_labels)) $$
 
 * Add the predicted label to the list of predictions.
 
@@ -117,9 +111,7 @@ where _z_ is the linear combination of weights and features:
 $$ z = w . X + b $$
 
 3. Cost function: The negative log-likelihood represents the logistic regression cost function.
-$$
-        J(w, b) = - \frac{1}{m} \sum_{i = 1}^{m} [y^{i} log(\sigma(w . X^{i} + b )) + (1 - y^{i}) log (1 - \sigma(w . X^{i} + b))] + \frac{\lambda}{2m}  \sum_{j = 1}^{n} w_{j}^{2}
-$$
+$$ J(w, b) = - \frac{1}{m} \sum_{i = 1}^{m} [y^{i} log(\sigma(w . X^{i} + b )) + (1 - y^{i}) log (1 - \sigma(w . X^{i} + b))] + \frac{\lambda}{2m}  \sum_{j = 1}^{n} w_{j}^{2} $$
 where m is the number of samples, _n_ is the number of features, X<sup>i</sup> is the feature vector for the <sub>i</sub>th sample, y<sup>i</sup> is the true label for the <sub>i</sub>th sample. 
     
 4. Gradient Descent: The gradients are computed as follows concerning the weights _(w)_ and bias _(b)_:
