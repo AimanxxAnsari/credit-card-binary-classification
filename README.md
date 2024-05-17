@@ -76,7 +76,7 @@ Explaining class KNNClassifier:
 2. Training: Takes _X_train_ and corresponding labels _y_train_ as input and storing them.
 3. Prediction: Takes test dataset as input. For each sample in the test dataset, we calculate the Euclidean distance.
 
-$ EuclideanDistance = \sqrt{\sum_{i = 1}^{n} (X_{test, i} - X_{train, i})^2} $
+$$ EuclideanDistance = \sqrt{\sum_{i = 1}^{n} (X_{test, i} - X_{train, i})^2} $$
 
 where _n_ is number of features
 
