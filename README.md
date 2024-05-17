@@ -80,10 +80,10 @@ $$ EuclideanDistance = \sqrt{\sum_{i = 1}^{n} (X_{test, i} - X_{train, i})^2} $$
 
 where _n_ is number of features
 
-* Find the indices of the {k} samples in \(X_{train}\) with the smallest distances:
+* Find the indices of the {k} samples in _X_train_ with the smallest distances:
 
 $$
-nearest_neighbors_indices = argsort(distances)[:k]
+nearest\_neighbors/_indices = argsort(distances)[:k]
 $$
 
 * Get the labels that go with the closest neighbors:
