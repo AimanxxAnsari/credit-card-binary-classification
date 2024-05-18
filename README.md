@@ -36,12 +36,13 @@ SMOTE Algorithm:
 2. Separate the Minority and Majority Classes: Identify these samples by _minority (Y = 1)_ and _majority (Y = 0)_
 3. Calculating Samples and Randomly Selecting Minority Samples: Determining the number of synthetic samples that need to be generated and randomly selecting samples for generating samples
 4. Calculating Euclidean Distance: Between the selected minority samples calculate the Euclidean distance.
-   
-   $$  EuclideanDistance_{ij} = || minority\_sample_i -  minority\_class_j ||_2 $$
+
+$$  EuclideanDistance_{ij} = || minority\_sample_i -  minority\_class_j ||_2 $$
+
 
 5. Generate Synthetic Samples: For each minority sample that was selected, we take a random neighbor and generate synthetic samples by adding randomness ($\alpha$) in the sample.
+$$ SyntheticSample = MinoritySample + \alpha × (Neighbor - MinoritySample) $$
 
-    $$ SyntheticSample = MinoritySample + \alpha × (Neighbor - MinoritySample) $$
 
 6. Combining Samples: Combine the synthetically generated samples with original minority and majority samples.
 
@@ -74,7 +75,7 @@ Explaining class RandomForest:
 __K-Nearest Neighbour Classifier:__ Being one of the simplest nonparametric classifiers. During the training phase, As a reference, the whole training dataset is stored by the KNN algorithm. It determines the distance, using a selected distance metric like Euclidean distance, between each training sample and the input data point before generating predictions. The projected label for the input data point is determined by the algorithm by taking the class label that is most prevalent among the K neighbors.
 
 Explaining class KNNClassifier:
-1. Initialization: Takes the number of neighbors as {k} input and initializes with the KNN Classifier.
+1. Initialization: Takes the number of neighbors as _k_ input and initializes with the KNN Classifier.
 2. Training: Takes _X_train_ and corresponding labels _y_train_ as input and storing them.
 3. Prediction: Takes test dataset as input. For each sample in the test dataset, we calculate the Euclidean distance.
 
@@ -82,10 +83,10 @@ $$ EuclideanDistance = \sqrt{\sum_{i = 1}^{n} (X_{test, i} - X_{train, i})^2} $$
 
 where _n_ is number of features
 
-* Find the indices of the {k} samples in _X_train_ with the smallest distances:
+* Find the indices of the _k_ samples in _X_train_ with the smallest distances:
 
 $$
-nearest\__neighbors\__indices = argsort(distances)[:k]
+nearestNeighborsIndices = argsort(distances)\[:k\]
 $$
 
 * Get the labels that go with the closest neighbors:
@@ -93,7 +94,9 @@ $$
 $$ nearest_labels = y_{train}[nearest_neighbors_indices] $$
 
 * item Based on the majority class among the closest neighbors, determine the label for the _X_test_.
-$$ predicted_label = argmax(bincount(nearest_labels)) $$
+
+$$ predictedLabel = argmax(bincount(nearestLabels)) $$
+
 
 * Add the predicted label to the list of predictions.
 
@@ -110,7 +113,9 @@ Explaining Logistic Regression:
 $$ \sigma(z) = \frac{1}{1 + e^{-z}} $$ 
 
 where _z_ is the linear combination of weights and features:
+
 $$ z = w . X + b $$
+
 
 3. Cost function: The negative log-likelihood represents the logistic regression cost function.
 
