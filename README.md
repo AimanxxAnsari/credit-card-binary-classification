@@ -37,11 +37,13 @@ SMOTE Algorithm:
 3. Calculating Samples and Randomly Selecting Minority Samples: Determining the number of synthetic samples that need to be generated and randomly selecting samples for generating samples
 4. Calculating Euclidean Distance: Between the selected minority samples calculate the Euclidean distance.
 
-$$  EuclideanDistance_{ij} = || minority\_sample_i -  minority\_class_j ||_2 $$
+$$  EuclideanDistance_{ij} = || minoritySample_i -  minorityClass_j ||_2 $$
 
 
 5. Generate Synthetic Samples: For each minority sample that was selected, we take a random neighbor and generate synthetic samples by adding randomness ($\alpha$) in the sample.
+
 $$ SyntheticSample = MinoritySample + \alpha × (Neighbor - MinoritySample) $$
+
 
 
 6. Combining Samples: Combine the synthetically generated samples with original minority and majority samples.
@@ -91,7 +93,7 @@ $$
 
 * Get the labels that go with the closest neighbors:
 
-$$ nearest_labels = y_{train}[nearest_neighbors_indices] $$
+$$ nearestLabels = y_{train}[nearestNeighborsIndices] $$
 
 * item Based on the majority class among the closest neighbors, determine the label for the _X_test_.
 
