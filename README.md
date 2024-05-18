@@ -58,9 +58,11 @@ Explaining class DecisionTree:
 1. Initialization: The _DecisionTree_ class is initialized with a specific _max_dept_
 2. DecisionTree fit: Set the leaf node value if the node has just one class or if the depth limit has been reached. Determine the Gini impurity for each split scenario that the dataset may have.
 3. Calculating Gini Impurity: Based on class labels in the left and right partitions, calculate the Gini impurity for a split.
+
 $$
             Gini = 1 - \sum_c (\frac{count(c)}{total size})
 $$
+
 4. DecisionTree Predict: Return the value of the node if it is a leaf. Traverse the left subtree if the sample's feature value is less than or equal to the threshold; if not, go through the right subtree.
 
 Explaining class RandomForest:
@@ -104,15 +106,16 @@ Explaining Logistic Regression:
 1. Initialization: Takes input as Learning rate ($\alpha$), number of iterations, regularization parameter ($\lambda$) and finally initialize with weights _(w)_ and bias _(b)_ as zeros.
 
 2. Sigmoid function: This function helps in mapping the linear output to a range between 0 and 1. 
-$$
-    \sigma(z) = \frac{1}{1 + e^{-z}}
-$$ 
+
+$$ \sigma(z) = \frac{1}{1 + e^{-z}} $$ 
 
 where _z_ is the linear combination of weights and features:
 $$ z = w . X + b $$
 
 3. Cost function: The negative log-likelihood represents the logistic regression cost function.
+
 $$ J(w, b) = - \frac{1}{m} \sum_{i = 1}^{m} [y^{i} log(\sigma(w . X^{i} + b )) + (1 - y^{i}) log (1 - \sigma(w . X^{i} + b))] + \frac{\lambda}{2m}  \sum_{j = 1}^{n} w_{j}^{2} $$
+
 where m is the number of samples, _n_ is the number of features, X<sup>i</sup> is the feature vector for the <sub>i</sub>th sample, y<sup>i</sup> is the true label for the <sub>i</sub>th sample. 
     
 4. Gradient Descent: The gradients are computed as follows concerning the weights _(w)_ and bias _(b)_:
